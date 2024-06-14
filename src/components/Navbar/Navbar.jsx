@@ -58,13 +58,13 @@ const Navbar = () => {
               IndoSaji
             </a>
             {/* menu items*/}
-            <div className="hidden lg:block">
-              <ul className="flex item-center gap-4">
+            <div className="hidden lg:flex items-center ml-4">
+              <ul className="flex items-center gap-8">
                 {MenuLinks.map((data, index) => (
                   <li key={index}>
                     <a
                       href={data.link}
-                      className="inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
+                      className="font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
                     >
                       {" "}
                       {data.name}
@@ -72,21 +72,21 @@ const Navbar = () => {
                   </li>
                 ))}
                 {/* dropdown */}
-                <li className="relative cursor-pointer group">
+                <li className="relative cursor-pointer group flex items-center gap-x-2">
                   <a
                     href="#"
                     className="flex-items-center gap-[2px] font-semibold text-gray-500 dark:hover:text-white py-2"
                   >
                     Quick Links
-                    <span>
-                      <FaCaretDown className="group-hover:rotate-180 duration-300 " />
-                    </span>
                   </a>
+                  <span>
+                    <FaCaretDown className="group-hover:rotate-180 duration-300 " />
+                  </span>
                   {/* dropdown Link */}
-                  <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white">
+                  <div className="absolute -bottom-36 z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white">
                     <ul className="space-y-2">
                       {DropdownLinks.map((data, index) => (
-                        <li>
+                        <li key={index}>
                           <a
                             className="text-gray-500 dark:hover:text-white duration-200 inline-block w-full p-2 hover:bg-primary/20 rounded-md font-semibold"
                             href={data.link}
